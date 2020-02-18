@@ -1,0 +1,28 @@
+type User {
+  id: ID! @id
+  name: String!
+  orders: [Order!]
+}
+
+type Product {
+  id: ID! @id
+  title: String!
+  description: String
+}
+
+type Order {
+  id: ID! @id
+  user: User!
+  orderItem: [OrderItem!]
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type OrderItem {
+  id: ID! @id
+  order: Order!
+  product: Product!
+  quantity: Int!
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
